@@ -19,3 +19,6 @@ https://bkkmwqgvgjp7zupas8hvl5.streamlit.app/
 - No Rivers
 - Cities don't consider the biome they're in.
 - Biomes have straight borders
+
+**Feedback**
+This map generator is very cool and works fast. I like the many different values that you can adjust to create infinitely many different kinds of fantasy maps. - Cameron Baliton
