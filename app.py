@@ -4,17 +4,11 @@ import numpy as np
 import noise
 import random
 
-# =========================
-# PAGE CONFIG
-# =========================
 st.set_page_config(page_title="MythicMap Generator", layout="centered")
-st.title("🌍 MythicMap – Fantasy World Generator")
+st.title("🌍 Fantasy World Generator")
 
 st.write("Generate procedural fantasy worlds with adjustable parameters.")
 
-# =========================
-# USER PARAMETERS
-# =========================
 world_size = st.slider("World Size", 256, 1024, 512, step=128)
 noise_scale = st.slider("Terrain Scale (lower = bigger continents)", 50.0, 300.0, 120.0)
 island_bias = st.slider("Island Fragmentation", 0.0, 1.5, 0.8)
@@ -24,9 +18,7 @@ seed = st.number_input("World Seed", value=42)
 
 generate_button = st.button("Generate World")
 
-# =========================
-# BIOME COLORS
-# =========================
+
 BIOMES = {
     "ocean": (54, 86, 168),
     "beach": (238, 214, 175),
@@ -37,9 +29,7 @@ BIOMES = {
     "mountain": (120, 120, 120)
 }
 
-# =========================
-# BIOME RULES
-# =========================
+
 def get_biome(elev, moisture, temp):
     if elev < -0.2:
         return "ocean"
@@ -56,9 +46,7 @@ def get_biome(elev, moisture, temp):
         return "grassland"
     return "forest"
 
-# =========================
-# GENERATION
-# =========================
+
 if generate_button:
 
     img = Image.new("RGB", (world_size, world_size))
